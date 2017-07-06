@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    height: 820px;
+}
+
+h1 {
+    margin: 50px 0 0 300px;
+}
+
+#startBtn {
+    margin-top: 200px;
+}

@@ -1,0 +1,23 @@
+{
+    "_description": "Editing Profile Startpage",
+    "steps": [
+        {
+            "element": "#el1",
+            "title": "Edition Management",
+            "content": "As an Editior Manager you are in charge of a myNet Edition. <br /><br />With  advanced access rights to the CMS and the myNet portal, you can define the entries in your Mega Menu with this app.<br /><br />Useful links:<br /><br /><a href='https://isharenew.dhl.com/sites/myNetCMSHelp/knowledge/Knowledge%20Base/Edition%20managers.aspx' target='_blank'>Edition Managers</a><br /><a href='https://isharenew.dhl.com/sites/myNetCMSHelp/knowledge/Knowledge%20Base/Edition.aspx' target='_blank'>Edition</a><br /><a href='https://isharenew.dhl.com/sites/myNetCMSHelp/knowledge/Knowledge%20Base/Mega%20Menu.aspx' target='_blank'>Mega Menu</a>",
+            "placement": "right",
+            "container": "body",
+            "path": "",
+            "host": "",
+            "animation": true,
+            "backdrop": false,
+            "backdropContainer": "body",
+            "backdropPadding": false,
+            "redirect": true,
+            "reflex": false,
+            "orphan": false,
+            "duration": false,
+            "template": "<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='end'>Got it!</button></div></div>"
+        }
+    ]
+}
