@@ -3,10 +3,10 @@
 /**
  *  Base file getting path.
  */
-const BASE_PATH = '';
+var BASE_PATH = '';
 
 /**
- *  Defualt HTML template.
+ *  Default HTML template.
  */
 const DEFAULT_TEMPLATE = "<div class='popover tour'>"
   + "<div class='arrow'></div>"
@@ -24,7 +24,7 @@ const DEFAULT_TEMPLATE = "<div class='popover tour'>"
  */
 var lang = 'en';
 
-function HelpTour() {};
+function HelpTour() {}
 
 /**
  *  Gets the active language.
@@ -34,13 +34,21 @@ HelpTour.setLang = function(lg) {
 };
 
 /**
+ * Sets the base path for file retrieving.
+ * @param path {String}
+ */
+HelpTour.setPath = function(path) {
+    BASE_PATH = path[path.length - 1] !== '/' ? path + '/' : path;
+};
+
+/**
  *  Creates a new tour initialized with the id and the data fed from the
  *  config file.
  *  @param id {String}
  *  @param selector {String}
  */
 HelpTour.newTour = function(id, selector) {
-
+    
   /**
    *  New tour init.
    */
@@ -65,8 +73,8 @@ HelpTour.newTour = function(id, selector) {
        *  Attaches the click event for the tour to start using the given selector.
        */
       $(selector).on('click', function(e) {
-           tour.init().start(true);
-           tour.goTo(0);
+          tour.init().start(true);
+          tour.goTo(0);
       });
   });
 };
@@ -78,15 +86,15 @@ HelpTour.newTour = function(id, selector) {
  */
 HelpTour.getFile = function(id, callback) {
     var file = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", BASE_PATH + id + '_' + lang + '.tour', true);
-    rawFile.onreadystatechange = function() {
+    file.overrideMimeType("application/json");
+    file.open("GET", BASE_PATH + id + '_' + lang + '.tour', true);
+    file.onreadystatechange = function() {
         if (file.readyState === 4 && file.status === 200) {
             callback(file.responseText);
         } else {
           console.log('HTTP Error: ' + file.status + ' ' + file.statusText);
         }
-    }
+    };
     file.send(null);
 };
 
